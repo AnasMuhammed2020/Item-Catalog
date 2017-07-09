@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: #ADA9A8;
+        }
+
+        .topbar {
+            background-color: #DC7862;
+            color: white;
+        }
+
+        .content {
+            max-width: 750px;
+        }
+
+        .topbar button {
+            float: right;
+            position: absolute;
+            left: 1250px;
+            top: 25px;
+            height: 35px;
+            width: 65px;
+        }
+
+        .content {
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topbar">
+        <h1>Catalog App</h1>
+        {% if b %}
+        <button onclick="window.location.href='/gdisconnect'"> logout </button> {% else %}
+        <button onclick="window.location.href='/login'"> login </button> {% endif %}
+    </div>
+
+    </div>
+    <div class="content">
+        <div>
+            <h2> Categories </h2>
+            <ul>
+                {% for i in allCat %}
+                <li>{{ i.name }}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+        <div>
+            <h2> {{ Res }} </h2>
+            <ul>
+                {% for i in allItems %}
+                <li>{{ i.name }}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+</body>
+
+</html>

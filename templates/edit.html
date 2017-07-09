@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: #ADA9A8;
+        }
+
+        .topbar {
+            background-color: #DC7862;
+            color: white;
+        }
+
+        .content {
+            max-width: 750px;
+        }
+
+        .topbar button {
+            float: right;
+            position: absolute;
+            left: 1250px;
+            top: 25px;
+            height: 35px;
+            width: 65px;
+        }
+
+        .content {
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topbar">
+        <h1>Catalog App</h1>
+        {% if b %}
+        <button onclick="window.location.href='/gdisconnect'"> logout </button> {% else %}
+        <button onclick="window.location.href='/login'"> login </button> {% endif %}
+    </div>
+
+    </div>
+    <div class="content">
+        <h2>Edit item</h2>
+        <form method="POST">
+            <label>Title</label>
+            <input type="text" name="title" value="{{ item.name }}">
+            <br>
+            <label>Description</label>
+            <input type="text" name="description" value="{{ item.description }}">
+            <br>
+            <label>Category</label>
+            <select name="category">
+                 {% for cat in cats %}
+                    <option value="{{ cat.name }}" >{{cat.name}}</option>
+                 {% endfor %}
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+
+</html>

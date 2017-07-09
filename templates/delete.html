@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link href="css/style.css" rel="stylesheet">-->
+    <style>
+        body {
+            background-color: #ADA9A8;
+        }
+
+        .topbar {
+            background-color: #DC7862;
+            color: white;
+        }
+
+        .content {
+            max-width: 750px;
+        }
+
+        .topbar button {
+            float: right;
+            position: absolute;
+            left: 1250px;
+            top: 25px;
+            height: 35px;
+            width: 65px;
+        }
+
+        .content {
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topbar">
+        <h1>Catalog App</h1>
+        {% if b %}
+        <button onclick="window.location.href='/gdisconnect'"> logout </button> {% else %}
+        <button onclick="window.location.href='/login'"> login </button> {% endif %}
+    </div>
+    </div>
+
+    <div class="content">
+        <h2>Delete</h2>
+        <p>Are you sure you want to delete ?</p>
+        <form method="post">
+            <input type="submit" name="del" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>
